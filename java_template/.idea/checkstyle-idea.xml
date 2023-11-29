@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CheckStyle-IDEA" serialisationVersion="2">
+<<<<<<< HEAD
     <checkstyleVersion>10.9.3</checkstyleVersion>
+=======
+    <checkstyleVersion>10.7.0</checkstyleVersion>
+>>>>>>> Yasin
     <scanScope>JavaOnly</scanScope>
     <copyLibs>true</copyLibs>
     <option name="thirdPartyClasspath" />

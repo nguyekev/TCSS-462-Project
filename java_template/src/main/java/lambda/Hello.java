@@ -4,6 +4,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import saaf.Inspector;
 import saaf.Response;
+
 import java.util.HashMap;
 
 /**
@@ -28,7 +29,7 @@ public class Hello implements RequestHandler<HashMap<String, Object>, HashMap<St
         inspector.inspectAll();
         
         //****************START FUNCTION IMPLEMENTATION*************************
-        
+
         //Add custom key/value attribute to SAAF's output. (OPTIONAL)
         inspector.addAttribute("message", "Hello " + request.get("name")
                 + "! This is a custom attribute added as output from SAAF!");
@@ -46,4 +47,5 @@ public class Hello implements RequestHandler<HashMap<String, Object>, HashMap<St
         inspector.inspectAllDeltas();
         return inspector.finish();
     }
+
 }
