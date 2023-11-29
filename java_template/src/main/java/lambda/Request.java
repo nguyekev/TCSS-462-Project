@@ -6,23 +6,27 @@ package lambda;
  */
 public class Request {
 
-    String name;
+    private String filename;
+    private String bucket;
 
-    public String getName() {
-        return name;
-    }
-    
-    public String getNameALLCAPS() {
-        return name.toUpperCase();
+
+    public String getFilename() {
+        return filename;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getBucket() {
+        return bucket;
     }
 
-    public Request(String name) {
-        this.name = name;
+    public void setFilename(String filename) {
+        this.filename = filename;
+
     }
+
+    public void setBucket(String bucket) {
+        this.bucket = bucket;
+    }
+
 
     public Request() {
 
