@@ -1,0 +1,379 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1701237056484)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM__Changes_.xml	(date 1701237056484)
+@@ -0,0 +1,9 @@
++<changelist name="Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM_[Changes]" date="1701235040091" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/28/2023 9:17 PM [Changes]" />
++  <binary>
++    <option name="BEFORE_PATH" />
++    <option name="AFTER_PATH" value="images/5xgkhmr1.png" />
++    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM_[Changes]/5xgkhmr1.png" />
++  </binary>
++</changelist>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	(date 1701236628745)
++++ b/.idea/jarRepositories.xml	(date 1701236628745)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Central Repository" />
++      <option name="url" value="https://repo.maven.apache.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+new file mode 100644
+--- /dev/null	(date 1701236628731)
++++ b/.idea/encodings.xml	(date 1701236628731)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1701237056713)
++++ b/.idea/compiler.xml	(date 1701237056713)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <annotationProcessing>
++      <profile name="Maven default annotation processors profile" enabled="true">
++        <sourceOutputDir name="target/generated-sources/annotations" />
++        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
++        <outputRelativeToContentRoot value="true" />
++        <module name="lambda_test" />
++      </profile>
++    </annotationProcessing>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1701237056702)
++++ b/.idea/misc.xml	(date 1701237056702)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="PDMPlugin">
++    <option name="skipTestSources" value="false" />
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK" />
++</project>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1701235038894)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2023_9_17_PM_[Changes]/shelved.patch	(date 1701235038894)
+@@ -0,0 +1,158 @@
++Index: src/main/java/lambda/Hello.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package lambda;\r\n\r\nimport com.amazonaws.services.lambda.runtime.Context;\r\nimport com.amazonaws.services.lambda.runtime.RequestHandler;\r\nimport saaf.Inspector;\r\nimport saaf.Response;\r\nimport java.util.HashMap;\r\n\r\n/**\r\n * uwt.lambda_test::handleRequest\r\n *\r\n * @author Wes Lloyd\r\n * @author Robert Cordingly\r\n */\r\npublic class Hello implements RequestHandler<HashMap<String, Object>, HashMap<String, Object>> {\r\n\r\n    /**\r\n     * Lambda Function Handler\r\n     * \r\n     * @param request Hashmap containing request JSON attributes.\r\n     * @param context \r\n     * @return HashMap that Lambda will automatically convert into JSON.\r\n     */\r\n    public HashMap<String, Object> handleRequest(HashMap<String, Object> request, Context context) {\r\n        \r\n        //Collect initial data.\r\n        Inspector inspector = new Inspector();\r\n        inspector.inspectAll();\r\n        \r\n        //****************START FUNCTION IMPLEMENTATION*************************\r\n        \r\n        //Add custom key/value attribute to SAAF's output. (OPTIONAL)\r\n        inspector.addAttribute(\"message\", \"Hello \" + request.get(\"name\")\r\n                + \"! This is a custom attribute added as output from SAAF!\");\r\n        \r\n        //Create and populate a separate response object for function output. (OPTIONAL)\r\n        Response response = new Response();\r\n        response.setValue(\"Hello \" + request.get(\"name\")\r\n                + \"! This is from a response object!\");\r\n        \r\n        inspector.consumeResponse(response);\r\n        \r\n        //****************END FUNCTION IMPLEMENTATION***************************\r\n                \r\n        //Collect final information such as total runtime and cpu deltas.\r\n        inspector.inspectAllDeltas();\r\n        return inspector.finish();\r\n    }\r\n}\r\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/src/main/java/lambda/Hello.java b/src/main/java/lambda/Hello.java
++--- a/src/main/java/lambda/Hello.java	(revision d30235b6e74ff4be03b166e6885672bfcfb37fef)
+++++ b/src/main/java/lambda/Hello.java	(date 1701235017281)
++@@ -4,6 +4,16 @@
++ import com.amazonaws.services.lambda.runtime.RequestHandler;
++ import saaf.Inspector;
++ import saaf.Response;
+++
+++import javax.imageio.ImageIO;
+++import javax.swing.*;
+++import java.awt.*;
+++import java.awt.geom.AffineTransform;
+++import java.awt.image.BufferedImage;
+++import java.io.File;
+++import java.io.IOException;
+++import java.nio.file.Files;
+++import java.nio.file.Path;
++ import java.util.HashMap;
++ 
++ /**
++@@ -28,7 +38,14 @@
++         inspector.inspectAll();
++         
++         //****************START FUNCTION IMPLEMENTATION*************************
++-        
+++        String filePath1 = "image/";
+++        String filePath2 = "image/5xgkhmr1.png";
+++
+++        // Rotate the first image
+++        rotateAndSaveImage(filePath1, "image/rotated1.png");
+++
+++        // Rotate the second image
+++        rotateAndSaveImage(filePath2, "image/rotated2.png");
++         //Add custom key/value attribute to SAAF's output. (OPTIONAL)
++         inspector.addAttribute("message", "Hello " + request.get("name")
++                 + "! This is a custom attribute added as output from SAAF!");
++@@ -46,4 +63,89 @@
++         inspector.inspectAllDeltas();
++         return inspector.finish();
++     }
+++    private void rotateAndSaveImage(String inputFilePath, String outputFilePath) {
+++        // Convert the file path to a Path object
+++        Path path = Path.of(inputFilePath);
+++
+++        // Check if the file exists
+++        if (Files.exists(path)) {
+++            // Check read permissions
+++            if (hasReadPermissions(path)) {
+++                System.out.println("Read permission is granted for " + inputFilePath);
+++
+++                // Check write permissions
+++                if (hasWritePermissions(path)) {
+++                    System.out.println("Write permission is granted for " + inputFilePath);
+++
+++                    // Rotate the image
+++                    try {
+++                        System.out.println("Image at: " + new File(inputFilePath).getAbsolutePath());
+++
+++                        // Load the original image
+++                        BufferedImage originalImage = ImageIO.read(new File(inputFilePath));
+++
+++                        // Specify the rotation angle in radians (degrees in this example)
+++                        double rotationAngle = Math.toRadians(45);
+++
+++                        // Create a transformation matrix for rotation
+++                        AffineTransform rotationTransform = new AffineTransform();
+++                        rotationTransform.rotate(rotationAngle, originalImage.getWidth() / 2, originalImage.getHeight() / 2);
+++
+++                        // Apply the transformation to the image
+++                        BufferedImage rotatedImage = new BufferedImage(originalImage.getWidth(), originalImage.getHeight(), originalImage.getType());
+++                        Graphics2D g2d = rotatedImage.createGraphics();
+++                        g2d.setTransform(rotationTransform);
+++                        g2d.drawImage(originalImage, 0, 0, null);
+++                        g2d.dispose();
+++
+++                        // Save the rotated image to a new file
+++                        ImageIO.write(rotatedImage, "png", new File(outputFilePath));
+++                        System.out.println("Image saved to: " + new File(outputFilePath).getAbsolutePath());
+++
+++                        System.out.println("Image rotation complete for " + inputFilePath);
+++                        // Display the rotated image in a frame
+++                        JFrame frame = new JFrame();
+++                        frame.setTitle("Rotated Image");
+++
+++                        // Add the rotated image to the frame
+++                        JLabel imageLabel = new JLabel(new ImageIcon(outputFilePath));
+++                        frame.add(imageLabel);
+++
+++                        // Pack the frame and make it visible
+++                        frame.pack();
+++                        frame.setVisible(true);
+++
+++                    } catch (IOException e) {
+++                        e.printStackTrace();
+++                    }
+++                } else {
+++                    System.out.println("Write permission is denied for " + inputFilePath);
+++                }
+++            } else {
+++                System.out.println("Read permission is denied for " + inputFilePath);
+++            }
+++        } else {
+++            System.out.println("File does not exist: " + inputFilePath);
+++        }
+++    }
+++
+++    private static boolean hasReadPermissions(Path path) {
+++        try {
+++            // Check read permissions
+++            return Files.isReadable(path);
+++        } catch (SecurityException e) {
+++            System.out.println("SecurityException: " + e.getMessage());
+++            return false;
+++        }
+++    }
+++
+++    private static boolean hasWritePermissions(Path path) {
+++        try {
+++            // Check write permissions
+++            return Files.isWritable(path);
+++        } catch (SecurityException e) {
+++            System.out.println("SecurityException: " + e.getMessage());
+++            return false;
+++        }
+++    }
++ }
++Index: pom.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <groupId>uwt</groupId>\r\n    <artifactId>lambda_test</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <packaging>jar</packaging>\r\n    <name>java_template</name>\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>com.amazonaws</groupId>\r\n            <artifactId>aws-lambda-java-core</artifactId>\r\n            <version>1.1.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.google.code.gson</groupId>\r\n            <artifactId>gson</artifactId>\r\n            <version>2.8.5</version>\r\n        </dependency>\r\n    </dependencies>\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <maven.compiler.source>1.8</maven.compiler.source>\r\n        <maven.compiler.target>1.8</maven.compiler.target>\r\n    </properties>\r\n  <build>\r\n    <plugins>\r\n      <plugin>\r\n        <groupId>org.apache.maven.plugins</groupId>\r\n        <artifactId>maven-shade-plugin</artifactId>\r\n        <version>2.3</version>\r\n        <configuration>\r\n          <createDependencyReducedPom>false</createDependencyReducedPom>\r\n        </configuration>\r\n        <executions>\r\n          <execution>\r\n            <phase>package</phase>\r\n            <goals>\r\n              <goal>shade</goal>\r\n            </goals>\r\n          </execution>\r\n        </executions>\r\n      </plugin>\r\n    </plugins>\r\n    <resources>\r\n        <resource>\r\n            <directory>src/main/resources</directory>\r\n            <includes>\r\n                <include>**/*.jpg</include>\r\n            </includes>\r\n        </resource>\r\n    </resources>\r\n  </build>    \r\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/pom.xml b/pom.xml
++--- a/pom.xml	(revision d30235b6e74ff4be03b166e6885672bfcfb37fef)
+++++ b/pom.xml	(date 1701235017269)
++@@ -41,6 +41,14 @@
++           </execution>
++         </executions>
++       </plugin>
+++        <plugin>
+++            <groupId>org.apache.maven.plugins</groupId>
+++            <artifactId>maven-compiler-plugin</artifactId>
+++            <configuration>
+++                <source>11</source>
+++                <target>11</target>
+++            </configuration>
+++        </plugin>
++     </plugins>
++     <resources>
++         <resource>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1701237000889)
++++ b/.idea/workspace.xml	(date 1701237000889)
+@@ -0,0 +1,81 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="550acf88-2d10-4e02-9dfa-458ae5dd38d9" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$/.." value="master" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="MavenImportPreferences">
++    <option name="generalSettings">
++      <MavenGeneralSettings>
++        <option name="useMavenConfig" value="true" />
++      </MavenGeneralSettings>
++    </option>
++  </component>
++  <component name="ProjectId" id="2YpnRZDTsQse6KTsDhq7GuXpKoQ" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "jdk.selected.JAVA_MODULE": "19",
++    "last_opened_file_path": "C:/Users/ibrah/Documents/Cloud/teamProject/TCSS-462-Project/java_template",
++    "nodejs_package_manager_path": "npm"
++  }
++}]]></component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\ibrah\Documents\Cloud\teamProject\TCSS-462-Project\java_template\images" />
++    </key>
++    <key name="CopyClassDialog.RECENTS_KEY">
++      <recent name="lambda" />
++    </key>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="550acf88-2d10-4e02-9dfa-458ae5dd38d9" name="Changes" comment="" />
++      <created>1701231388966</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1701231388966</updated>
++      <workItem from="1701231391656" duration="3716000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file

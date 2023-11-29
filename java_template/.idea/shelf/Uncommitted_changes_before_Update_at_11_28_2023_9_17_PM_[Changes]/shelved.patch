@@ -1,0 +1,158 @@
+Index: src/main/java/lambda/Hello.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package lambda;\r\n\r\nimport com.amazonaws.services.lambda.runtime.Context;\r\nimport com.amazonaws.services.lambda.runtime.RequestHandler;\r\nimport saaf.Inspector;\r\nimport saaf.Response;\r\nimport java.util.HashMap;\r\n\r\n/**\r\n * uwt.lambda_test::handleRequest\r\n *\r\n * @author Wes Lloyd\r\n * @author Robert Cordingly\r\n */\r\npublic class Hello implements RequestHandler<HashMap<String, Object>, HashMap<String, Object>> {\r\n\r\n    /**\r\n     * Lambda Function Handler\r\n     * \r\n     * @param request Hashmap containing request JSON attributes.\r\n     * @param context \r\n     * @return HashMap that Lambda will automatically convert into JSON.\r\n     */\r\n    public HashMap<String, Object> handleRequest(HashMap<String, Object> request, Context context) {\r\n        \r\n        //Collect initial data.\r\n        Inspector inspector = new Inspector();\r\n        inspector.inspectAll();\r\n        \r\n        //****************START FUNCTION IMPLEMENTATION*************************\r\n        \r\n        //Add custom key/value attribute to SAAF's output. (OPTIONAL)\r\n        inspector.addAttribute(\"message\", \"Hello \" + request.get(\"name\")\r\n                + \"! This is a custom attribute added as output from SAAF!\");\r\n        \r\n        //Create and populate a separate response object for function output. (OPTIONAL)\r\n        Response response = new Response();\r\n        response.setValue(\"Hello \" + request.get(\"name\")\r\n                + \"! This is from a response object!\");\r\n        \r\n        inspector.consumeResponse(response);\r\n        \r\n        //****************END FUNCTION IMPLEMENTATION***************************\r\n                \r\n        //Collect final information such as total runtime and cpu deltas.\r\n        inspector.inspectAllDeltas();\r\n        return inspector.finish();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/lambda/Hello.java b/src/main/java/lambda/Hello.java
+--- a/src/main/java/lambda/Hello.java	(revision d30235b6e74ff4be03b166e6885672bfcfb37fef)
++++ b/src/main/java/lambda/Hello.java	(date 1701235017281)
+@@ -4,6 +4,16 @@
+ import com.amazonaws.services.lambda.runtime.RequestHandler;
+ import saaf.Inspector;
+ import saaf.Response;
++
++import javax.imageio.ImageIO;
++import javax.swing.*;
++import java.awt.*;
++import java.awt.geom.AffineTransform;
++import java.awt.image.BufferedImage;
++import java.io.File;
++import java.io.IOException;
++import java.nio.file.Files;
++import java.nio.file.Path;
+ import java.util.HashMap;
+ 
+ /**
+@@ -28,7 +38,14 @@
+         inspector.inspectAll();
+         
+         //****************START FUNCTION IMPLEMENTATION*************************
+-        
++        String filePath1 = "image/";
++        String filePath2 = "image/5xgkhmr1.png";
++
++        // Rotate the first image
++        rotateAndSaveImage(filePath1, "image/rotated1.png");
++
++        // Rotate the second image
++        rotateAndSaveImage(filePath2, "image/rotated2.png");
+         //Add custom key/value attribute to SAAF's output. (OPTIONAL)
+         inspector.addAttribute("message", "Hello " + request.get("name")
+                 + "! This is a custom attribute added as output from SAAF!");
+@@ -46,4 +63,89 @@
+         inspector.inspectAllDeltas();
+         return inspector.finish();
+     }
++    private void rotateAndSaveImage(String inputFilePath, String outputFilePath) {
++        // Convert the file path to a Path object
++        Path path = Path.of(inputFilePath);
++
++        // Check if the file exists
++        if (Files.exists(path)) {
++            // Check read permissions
++            if (hasReadPermissions(path)) {
++                System.out.println("Read permission is granted for " + inputFilePath);
++
++                // Check write permissions
++                if (hasWritePermissions(path)) {
++                    System.out.println("Write permission is granted for " + inputFilePath);
++
++                    // Rotate the image
++                    try {
++                        System.out.println("Image at: " + new File(inputFilePath).getAbsolutePath());
++
++                        // Load the original image
++                        BufferedImage originalImage = ImageIO.read(new File(inputFilePath));
++
++                        // Specify the rotation angle in radians (degrees in this example)
++                        double rotationAngle = Math.toRadians(45);
++
++                        // Create a transformation matrix for rotation
++                        AffineTransform rotationTransform = new AffineTransform();
++                        rotationTransform.rotate(rotationAngle, originalImage.getWidth() / 2, originalImage.getHeight() / 2);
++
++                        // Apply the transformation to the image
++                        BufferedImage rotatedImage = new BufferedImage(originalImage.getWidth(), originalImage.getHeight(), originalImage.getType());
++                        Graphics2D g2d = rotatedImage.createGraphics();
++                        g2d.setTransform(rotationTransform);
++                        g2d.drawImage(originalImage, 0, 0, null);
++                        g2d.dispose();
++
++                        // Save the rotated image to a new file
++                        ImageIO.write(rotatedImage, "png", new File(outputFilePath));
++                        System.out.println("Image saved to: " + new File(outputFilePath).getAbsolutePath());
++
++                        System.out.println("Image rotation complete for " + inputFilePath);
++                        // Display the rotated image in a frame
++                        JFrame frame = new JFrame();
++                        frame.setTitle("Rotated Image");
++
++                        // Add the rotated image to the frame
++                        JLabel imageLabel = new JLabel(new ImageIcon(outputFilePath));
++                        frame.add(imageLabel);
++
++                        // Pack the frame and make it visible
++                        frame.pack();
++                        frame.setVisible(true);
++
++                    } catch (IOException e) {
++                        e.printStackTrace();
++                    }
++                } else {
++                    System.out.println("Write permission is denied for " + inputFilePath);
++                }
++            } else {
++                System.out.println("Read permission is denied for " + inputFilePath);
++            }
++        } else {
++            System.out.println("File does not exist: " + inputFilePath);
++        }
++    }
++
++    private static boolean hasReadPermissions(Path path) {
++        try {
++            // Check read permissions
++            return Files.isReadable(path);
++        } catch (SecurityException e) {
++            System.out.println("SecurityException: " + e.getMessage());
++            return false;
++        }
++    }
++
++    private static boolean hasWritePermissions(Path path) {
++        try {
++            // Check write permissions
++            return Files.isWritable(path);
++        } catch (SecurityException e) {
++            System.out.println("SecurityException: " + e.getMessage());
++            return false;
++        }
++    }
+ }
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <groupId>uwt</groupId>\r\n    <artifactId>lambda_test</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <packaging>jar</packaging>\r\n    <name>java_template</name>\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>com.amazonaws</groupId>\r\n            <artifactId>aws-lambda-java-core</artifactId>\r\n            <version>1.1.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.google.code.gson</groupId>\r\n            <artifactId>gson</artifactId>\r\n            <version>2.8.5</version>\r\n        </dependency>\r\n    </dependencies>\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <maven.compiler.source>1.8</maven.compiler.source>\r\n        <maven.compiler.target>1.8</maven.compiler.target>\r\n    </properties>\r\n  <build>\r\n    <plugins>\r\n      <plugin>\r\n        <groupId>org.apache.maven.plugins</groupId>\r\n        <artifactId>maven-shade-plugin</artifactId>\r\n        <version>2.3</version>\r\n        <configuration>\r\n          <createDependencyReducedPom>false</createDependencyReducedPom>\r\n        </configuration>\r\n        <executions>\r\n          <execution>\r\n            <phase>package</phase>\r\n            <goals>\r\n              <goal>shade</goal>\r\n            </goals>\r\n          </execution>\r\n        </executions>\r\n      </plugin>\r\n    </plugins>\r\n    <resources>\r\n        <resource>\r\n            <directory>src/main/resources</directory>\r\n            <includes>\r\n                <include>**/*.jpg</include>\r\n            </includes>\r\n        </resource>\r\n    </resources>\r\n  </build>    \r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision d30235b6e74ff4be03b166e6885672bfcfb37fef)
++++ b/pom.xml	(date 1701235017269)
+@@ -41,6 +41,14 @@
+           </execution>
+         </executions>
+       </plugin>
++        <plugin>
++            <groupId>org.apache.maven.plugins</groupId>
++            <artifactId>maven-compiler-plugin</artifactId>
++            <configuration>
++                <source>11</source>
++                <target>11</target>
++            </configuration>
++        </plugin>
+     </plugins>
+     <resources>
+         <resource>
