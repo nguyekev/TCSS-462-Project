@@ -14,7 +14,7 @@ public class Mirrorimage{
       
 
         try{
-            f = new File("C:/Users/zebol/Pictures/wallpaper/87617926_p0.png");
+            f = new File("path.png");
             simg = ImageIO.read(f);
         }catch(IOException e){
             System.out.println("Error: " + e);
@@ -41,7 +41,7 @@ public class Mirrorimage{
         
         //save mirror image
         try{
-            f = new File("C:/Users/zebol/Downloads/mirror.png");
+            f = new File("out.png");
             ImageIO.write(mimghalf, "png", f);
         }catch(IOException e){
             System.out.println("Error: " + e);

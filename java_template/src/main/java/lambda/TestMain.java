@@ -62,7 +62,9 @@ public class TestMain {
         if (image != null) { // error handling just in case
             // process image here
             image = applyGrayScale(image);
+            
 
+            // uploading
             ByteArrayOutputStream os = new ByteArrayOutputStream();
             try {
                 // get input stream
