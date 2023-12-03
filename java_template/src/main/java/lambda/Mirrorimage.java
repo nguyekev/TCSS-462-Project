@@ -36,7 +36,7 @@ public class Mirrorimage{
             }
         }
 
-        // crop just the left half of the image
+        // crop just the right half of the image (the mirrored part)
         BufferedImage mimghalf = mimg.getSubimage(width, 0, width, height);
         
         //save mirror image

@@ -32,8 +32,9 @@ public class TestMain {
 
     /** S3 Bucket Name. */
     private static final String bucketname = "test.bucket.462562.f23.image.bl";
-    /** Image name that is already in the bucket to get and process. */
+    /** Image name that is already in the bucket to get. */
     private static final String filename = "Dog.png";
+    /** Output file name to upload to the bucket after finsihed processing. */
     private static final String outfilename = "GrayDog.png";
 
     /**
@@ -91,14 +92,14 @@ public class TestMain {
      * @return grayscaled buffered image
      */
     private static BufferedImage applyGrayScale(final BufferedImage image) {
-        // System.out.println("Starting Grayscale Conversion...");
         BufferedImage grayImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
         Graphics g = grayImage.getGraphics();
         g.drawImage(image, 0, 0, null);
         g.dispose();
-        // System.out.println("...Finish Grayscale Conversion");
         return grayImage;
     }
+
+    
 
     // unused methods
 
