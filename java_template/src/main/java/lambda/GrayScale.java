@@ -59,8 +59,6 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
             // process image here
             image = applyGrayScale(image);
 
-            //writeToFile(image, "Doggy.png"); // get processed file locally
-
             ByteArrayOutputStream os = new ByteArrayOutputStream();
             try {
                 // get input stream
