@@ -25,6 +25,10 @@ import saaf.Inspector;
 import saaf.Response;
 
 public class GrayScale implements RequestHandler<Request, HashMap<String, Object>> {
+    // public static void main(String[] args) {
+    //     String file = "/home/vboxuser/Downloads/Dog.png";
+    //     BufferedImage img = readFromFile(file);
+    // }
     /**
      * Lambda Function Handler
      * 
@@ -43,16 +47,32 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
         // int col = request.getCol();
         String bucketname = request.getBucketname();
         String filename = request.getFilename();
-        String input_file = request.getFilePath();
+        //String input_file = request.getFilepath();
 
-        BufferedImage image = readFromFile(input_file);
-        DataBufferByte data = (DataBufferByte) image.getRaster().getDataBuffer();
-        
-        InputStream is = new ByteArrayInputStream(data.getData());
-        ObjectMetadata meta = new ObjectMetadata();
-        meta.setContentType("image/png");
         AmazonS3 s3Client = AmazonS3ClientBuilder.standard().build();
-        s3Client.putObject(bucketname, filename, is, meta);
+
+        // get image from s3 bucket
+        S3Object s3Object = s3Client.getObject(new GetObjectRequest(bucketname, filename));
+        InputStream objectData = s3Object.getObjectContent();
+        
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(objectData);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // transform
+        if (image != null) {
+            // put back into s3 bucket after transform
+            DataBufferByte data = (DataBufferByte) image.getRaster().getDataBuffer();
+        
+            InputStream is = new ByteArrayInputStream(data.getData());
+            ObjectMetadata meta = new ObjectMetadata();
+            meta.setContentType("image/png");
+        
+            s3Client.putObject(bucketname, filename+".png", is, meta);
+        }
         
         //Create and populate a separate response object for function output. (OPTIONAL)
         Response response = new Response();

@@ -34,11 +34,21 @@ public class Request {
     public String getFilename() {
         return filename;
     }
-    public String getFilePath() {
+    public String getFilepath() {
         return filepath;
     }
     public String getBucketname() {
         return bucketname;
+    }
+
+    public void setFilename(String theFilename) {
+        filename = theFilename;
+    }
+    public void setFilePath(String theFilepath) {
+        filepath = theFilepath;
+    }
+    public void setBucketname(String theBucketname) {
+        bucketname = theBucketname;
     }
 
 }
