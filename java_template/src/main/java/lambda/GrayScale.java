@@ -4,16 +4,15 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
-import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
 import com.amazonaws.services.lambda.runtime.Context;
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.S3Object;
@@ -25,10 +24,6 @@ import saaf.Inspector;
 import saaf.Response;
 
 public class GrayScale implements RequestHandler<Request, HashMap<String, Object>> {
-    // public static void main(String[] args) {
-    //     String file = "/home/vboxuser/Downloads/Dog.png";
-    //     BufferedImage img = readFromFile(file);
-    // }
     /**
      * Lambda Function Handler
      * 
@@ -43,11 +38,8 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
         //inspector.inspectAll();
         
         //****************START FUNCTION IMPLEMENTATION*************************
-        // int row = request.getRow();
-        // int col = request.getCol();
         String bucketname = request.getBucketname();
         String filename = request.getFilename();
-        //String input_file = request.getFilepath();
 
         AmazonS3 s3Client = AmazonS3ClientBuilder.standard().build();
 
@@ -55,6 +47,7 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
         S3Object s3Object = s3Client.getObject(new GetObjectRequest(bucketname, filename));
         InputStream objectData = s3Object.getObjectContent();
         
+        // convert the s3 object to a buffered image for processing
         BufferedImage image = null;
         try {
             image = ImageIO.read(objectData);
@@ -62,16 +55,27 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
             e.printStackTrace();
         }
 
-        // transform
-        if (image != null) {
-            // put back into s3 bucket after transform
-            DataBufferByte data = (DataBufferByte) image.getRaster().getDataBuffer();
-        
-            InputStream is = new ByteArrayInputStream(data.getData());
-            ObjectMetadata meta = new ObjectMetadata();
-            meta.setContentType("image/png");
-        
-            s3Client.putObject(bucketname, filename+".png", is, meta);
+        if (image != null) { // error handling just in case
+            // process image here
+            image = applyGrayScale(image);
+
+            //writeToFile(image, "Doggy.png"); // get processed file locally
+
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
+            try {
+                // get input stream
+                ImageIO.write(image,"png", os);
+                InputStream is = new ByteArrayInputStream(os.toByteArray());
+
+                // specify meta type
+                ObjectMetadata meta = new ObjectMetadata();
+                meta.setContentType("image/png");
+
+                // upload image to the s3 bucket
+                s3Client.putObject(bucketname, "Doggy.png", is, meta);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } 
         }
         
         //Create and populate a separate response object for function output. (OPTIONAL)
@@ -87,43 +91,16 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
         return inspector.finish();
     }
 
-    private static BufferedImage readFromFile(final String path) {
-        BufferedImage image = null;
-        try {
-            File input_file = new File(path);
-
-            // Reading input file
-            image = ImageIO.read(input_file);
-
-            System.out.println("Reading complete.");
-        } catch (IOException e) {
-            System.out.println("Error: " + e);
-        }
-
-        return image;
-    }
-
-    private static void writeToFile(final BufferedImage image, final String outPath) {
-        try {
-            // Output file path
-            File output_file = new File(outPath);
-
-            // Writing to file taking type and path as
-            ImageIO.write(image, "png", output_file);
-
-            System.out.println("Writing complete.");
-        } catch (IOException e) {
-            System.out.println("Error: " + e);
-        }
-    }
-
+    /**
+     * Apply gray scale transformation to a buffered image.
+     * @param image the buffered image
+     * @return grayscaled buffered image
+     */
     private static BufferedImage applyGrayScale(final BufferedImage image) {
-        System.out.println("Starting Grayscale Conversion...");
         BufferedImage grayImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
         Graphics g = grayImage.getGraphics();
         g.drawImage(image, 0, 0, null);
         g.dispose();
-        System.out.println("...Finish Grayscale Conversion");
         return grayImage;
     }
 }
