@@ -14,7 +14,7 @@ public class Mirrorimage{
       
 
         try{
-            f = new File("FILE PATH HERE");
+            f = new File("C:/Users/zebol/Pictures/wallpaper/87617926_p0.png");
             simg = ImageIO.read(f);
         }catch(IOException e){
             System.out.println("Error: " + e);
@@ -23,11 +23,11 @@ public class Mirrorimage{
         int width = simg.getWidth();
         int height = simg.getHeight();
 
-        BufferedImage mimg = new BufferedImage(width*2, height, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage mimg = new BufferedImage(width * 2, height, BufferedImage.TYPE_INT_ARGB);
         
 
         for(int y = 0; y < height; y++){
-            for(int lx = 0, rx = width*2 - 1; lx < width; lx++, rx--){
+            for(int lx = 0, rx = width*2 - 1; lx < width; lx++, rx--) {
 
                 
                 int p = simg.getRGB(lx, y);
@@ -35,11 +35,14 @@ public class Mirrorimage{
                 mimg.setRGB(rx, y, p);
             }
         }
+
+        // crop just the left half of the image
+        BufferedImage mimghalf = mimg.getSubimage(width, 0, width, height);
         
         //save mirror image
         try{
-            f = new File("D:\\Image\\Output.png");
-            ImageIO.write(mimg, "png", f);
+            f = new File("C:/Users/zebol/Downloads/mirror.png");
+            ImageIO.write(mimghalf, "png", f);
         }catch(IOException e){
             System.out.println("Error: " + e);
         }
