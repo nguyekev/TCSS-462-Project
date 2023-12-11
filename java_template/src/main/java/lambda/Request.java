@@ -9,7 +9,7 @@ public class Request {
     String name;
     String filename;
     String bucketname;
-    String filepath;
+    String outfilename;
 
     public String getName() {
         return name;
@@ -34,18 +34,18 @@ public class Request {
     public String getFilename() {
         return filename;
     }
-    public String getFilepath() {
-        return filepath;
-    }
     public String getBucketname() {
         return bucketname;
+    }
+    public String getOutfilename() {
+        return outfilename;
     }
 
     public void setFilename(String theFilename) {
         filename = theFilename;
     }
-    public void setFilePath(String theFilepath) {
-        filepath = theFilepath;
+    public void setOutfilename(String theOutfilename) {
+        outfilename = theOutfilename;
     }
     public void setBucketname(String theBucketname) {
         bucketname = theBucketname;

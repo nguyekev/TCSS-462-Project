@@ -2,10 +2,8 @@ package lambda;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -40,6 +38,7 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
         //****************START FUNCTION IMPLEMENTATION*************************
         String bucketname = request.getBucketname();
         String filename = request.getFilename();
+        String outfilename = request.getOutfilename();
 
         AmazonS3 s3Client = AmazonS3ClientBuilder.standard().build();
 
@@ -70,7 +69,7 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
                 meta.setContentType("image/png");
 
                 // upload image to the s3 bucket
-                s3Client.putObject(bucketname, "Doggy.png", is, meta);
+                s3Client.putObject(bucketname, outfilename, is, meta);
             } catch (IOException e) {
                 e.printStackTrace();
             } 
@@ -78,7 +77,7 @@ public class GrayScale implements RequestHandler<Request, HashMap<String, Object
         
         //Create and populate a separate response object for function output. (OPTIONAL)
         Response response = new Response();
-        response.setValue("Bucket:" + bucketname + " filename:" + filename);
+        response.setValue("Bucket:" + bucketname + ", Filename:" + filename + ", Outfile: " + outfilename);
         
         inspector.consumeResponse(response);
         
