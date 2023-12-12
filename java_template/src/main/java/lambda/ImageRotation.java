@@ -143,7 +143,7 @@ public class ImageRotation implements RequestHandler<Request, HashMap<String, Ob
                         // Load the original image
                         BufferedImage originalImage = ImageIO.read(new File(inputFilePath));
 
-                        // Specify the rotation angle in radians (degrees in this example)
+                        // Specify the rotation angle in radians 
                         double rotationAngle = Math.toRadians(90);
 
                         // Create a transformation matrix for rotation
