@@ -114,9 +114,11 @@ public class ImageRotation implements RequestHandler<Request, HashMap<String, Ob
         // Create a transformation matrix for rotation
         AffineTransform rotationTransform = new AffineTransform();
         rotationTransform.rotate(rotationAngle, image.getWidth() / 2, image.getHeight() / 2);
+        double offset = (image.getWidth() - image.getHeight()) / 2;
+        rotationTransform.translate(offset, offset);
 
         // Apply the transformation to the image
-        BufferedImage rotatedImage = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
+        BufferedImage rotatedImage = new BufferedImage(image.getHeight(), image.getWidth(), image.getType());
         Graphics2D g2d = rotatedImage.createGraphics();
         g2d.setTransform(rotationTransform);
         g2d.drawImage(image, 0, 0, null);
