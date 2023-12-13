@@ -16,8 +16,10 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 
 /**
@@ -26,12 +28,12 @@ import com.amazonaws.services.s3.model.S3Object;
 public class TestMain {
     /** Your Credentials. */
     private static final AWSCredentials credentials = new BasicAWSCredentials(
-        "<access key>", 
-        "<secret key>"
+        "<Access Key>", 
+        "<Private Key>"
     );
 
     /** S3 Bucket Name. */
-    private static final String bucketname = "test.bucket.462562.f23.image.bl";
+    private static final String bucketname = "tcss.bucket.462.f23.image.bl";
     /** Image name that is already in the bucket to get. */
     private static final String filename = "Dog.png";
     /** Output file name to upload to the bucket after finsihed processing. */
@@ -77,7 +79,8 @@ public class TestMain {
                 meta.setContentType("image/png");
 
                 // upload image to the s3 bucket
-                s3Client.putObject(bucketname, outfilename, is, meta);
+                s3Client.putObject(new PutObjectRequest(bucketname, outfilename, is, meta)
+                                    .withCannedAcl(CannedAccessControlList.PublicRead));
             } catch (IOException e) {
                 e.printStackTrace();
             } 

@@ -7,8 +7,10 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 
 import saaf.Inspector;
@@ -75,7 +77,8 @@ public class ImageRotation implements RequestHandler<Request, HashMap<String, Ob
                 meta.setContentType("image/png");
 
                 // upload image to the s3 bucket
-                s3Client.putObject(bucketname, outfilename, is, meta);
+                s3Client.putObject(new PutObjectRequest(bucketname, outfilename, is, meta)
+                                    .withCannedAcl(CannedAccessControlList.PublicRead));
             } catch (IOException e) {
                 e.printStackTrace();
             } 
@@ -106,7 +109,7 @@ public class ImageRotation implements RequestHandler<Request, HashMap<String, Ob
     //     rotateAndSaveImage(filePath2, "image/rotated2.png");
     // }
     private BufferedImage rotateImage(final BufferedImage image) {
-        double rotationAngle = Math.toRadians(45);
+        double rotationAngle = Math.toRadians(90);
 
         // Create a transformation matrix for rotation
         AffineTransform rotationTransform = new AffineTransform();
