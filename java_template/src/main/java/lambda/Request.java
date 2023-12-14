@@ -10,6 +10,7 @@ public class Request {
     String filename;
     String bucketname;
     String outfilename;
+    String imagePath;
 
     public String getName() {
         return name;
@@ -40,6 +41,9 @@ public class Request {
     public String getOutfilename() {
         return outfilename;
     }
+    public String getImagePath() {
+        return imagePath;
+    }
 
     public void setFilename(String theFilename) {
         filename = theFilename;
@@ -49,6 +53,10 @@ public class Request {
     }
     public void setBucketname(String theBucketname) {
         bucketname = theBucketname;
+    }
+
+    public void setImagePath(String theImagePath) {
+        imagePath = theImagePath;
     }
 
 }
