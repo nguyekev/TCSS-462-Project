@@ -54,29 +54,30 @@ public class ImageMySQL implements RequestHandler<Request, HashMap<String, Objec
             Properties properties = new Properties();
             properties.load(new FileInputStream("db.properties"));
             
+            context.getLogger().log("Properties init");
             String url = properties.getProperty("url");
             String username = properties.getProperty("username");
             String password = properties.getProperty("password");
             String driver = properties.getProperty("driver");
+            context.getLogger().log("Properties init done");
             
-            r.setValue(request.getName());
+            r.setValue(request.getUrl());
             // Manually loading the JDBC Driver is commented out
             // No longer required since JDBC 4
             //Class.forName(driver);
             Connection con = DriverManager.getConnection(url,username,password);
+            context.getLogger().log("Connection done");
             
-            PreparedStatement ps = con.prepareStatement("insert into mytable values('" + request.getName() + "','b','c');");
+            PreparedStatement ps = con.prepareStatement("insert into urltable values('" + request.getUrl() + "');");
             ps.execute();
-            ps = con.prepareStatement("select * from mytable;");
+            ps = con.prepareStatement("select * from urltable;");
             
             ResultSet rs = ps.executeQuery();
             LinkedList<String> ll = new LinkedList<String>();
             while (rs.next())
             {
-                logger.log("name=" + rs.getString("name"));
-                ll.add(rs.getString("name"));
-                logger.log("col2=" + rs.getString("col2"));
-                logger.log("col3=" + rs.getString("col3"));
+                logger.log("url=" + rs.getString("url"));
+                ll.add(rs.getString("url"));
             }
             ResultSet rs2 = con.prepareStatement("select version() as version;").executeQuery();
             while (rs2.next())
