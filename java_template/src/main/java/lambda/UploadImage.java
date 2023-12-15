@@ -5,14 +5,12 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -28,16 +26,16 @@ public class UploadImage implements RequestHandler<Request, HashMap<String, Obje
 
         String bucketname = request.getBucketname();
         String filename = request.getFilename();
+
+        // Load the image using the class loader
         String imagePath = request.getImagePath();
+        InputStream imageStream = getClass().getResourceAsStream(imagePath);
 
-        AmazonS3 s3Client = AmazonS3ClientBuilder.standard().build();
-
-
-        if (imagePath != null && !imagePath.isEmpty()) {
+        if (imageStream != null) {
             try {
                 context.getLogger().log("Reading image from: " + imagePath);
 
-                BufferedImage image = ImageIO.read(new File(imagePath));
+                BufferedImage image = ImageIO.read(imageStream);
 
                 if (image != null) {
                     context.getLogger().log("Image read successfully.");
@@ -51,12 +49,12 @@ public class UploadImage implements RequestHandler<Request, HashMap<String, Obje
                     meta.setContentType("image/png");
 
                     // Upload image to the S3 bucket
-                    s3Client.putObject(new PutObjectRequest(bucketname, filename, is, meta)
-                            .withCannedAcl(CannedAccessControlList.PublicRead));
+                    AmazonS3 s3Client = AmazonS3ClientBuilder.standard().build();
+                    s3Client.putObject(new PutObjectRequest(bucketname, filename, is, meta));
 
                     context.getLogger().log("Image uploaded to S3. Bucket: " + bucketname + ", Filename: " + filename);
                 } else {
-                    context.getLogger().log("Failed to read the image.");
+                    context.getLogger().log("Failed to read the image. Image is null.");
                 }
 
             } catch (IOException e) {
@@ -64,13 +62,14 @@ public class UploadImage implements RequestHandler<Request, HashMap<String, Obje
                 context.getLogger().log("Error reading the image: " + e.getMessage());
             }
         } else {
-            context.getLogger().log("Image path is null or empty.");
+            context.getLogger().log("Image stream is null. Image file not found in the JAR.");
         }
 
         Response response = new Response();
         response.setValue("Bucket:" + bucketname + ", Filename:" + filename + ", ImagePath:" + imagePath);
 
         inspector.consumeResponse(response);
+        context.getLogger().log("Returning response.");
         return inspector.finish();
     }
 }
