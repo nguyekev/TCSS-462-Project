@@ -2,6 +2,8 @@
 # apply grayscale and put in bucket
 # JSON object to pass to Lambda Function
 bucketName=tcss.bucket.462.f23.image.bl
+# imageName=5xgkhmr1.png
+imageName=Bird.png
 # JSON object to pass to Lambda Function
 payload='{"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "imagePath":"/images/Bird.png"}'
 
@@ -13,7 +15,7 @@ echo "JSON RESULT:"
 echo "$output" | jq
 echo ""
 
-jsonGray={"\"bucketname\"":"\"$bucketName\"","\"filename\"":"\"Bird.png\"","\"outfilename\"":"\"ImgGray.png\""}
+jsonGray={"\"bucketname\"":"\"$bucketName\"","\"filename\"":"\"$imageName\"","\"outfilename\"":"\"ImgGray.png\""}
 
 echo "Invoking Lambda function using AWS CLI for Grayscale transformation"
 time output=`aws lambda invoke --invocation-type RequestResponse --function-name image_grayscale --region us-east-2 --payload $jsonGray /dev/stdout | head -n 1 | head -c -2 ; echo`
