@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # JSON object to pass to Lambda Function
-json={"\"name\"":"\"Susan\u0020Smith\",\"param1\"":1,\"param2\"":2,\"param3\"":3}
+json={"\"url\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/ImgGrayMirrorRotate.png\""}
 
 #echo "Invoking Lambda function using API Gateway"
 #time output=`curl -s -H "Content-Type: application/json" -X POST -d $json {API-GATEWAY-REST-URL}`
@@ -14,7 +14,7 @@ json={"\"name\"":"\"Susan\u0020Smith\",\"param1\"":1,\"param2\"":2,\"param3\"":3
 
 echo "Invoking Lambda function using AWS CLI"
 #time output=`aws lambda invoke --invocation-type RequestResponse --function-name {LAMBDA-FUNCTION-NAME} --region us-east-2 --payload $json /dev/stdout | head -n 1 | head -c -2 ; echo`
-time output=`aws lambda invoke --invocation-type RequestResponse --function-name tutorial6sql --region us-east-2 --payload $json /dev/stdout | head -n 1 | head -c -2 ; echo`
+time output=`aws lambda invoke --invocation-type RequestResponse --function-name ImageSql --region us-east-2 --payload $json /dev/stdout | head -n 1 | head -c -2 ; echo`
 
 echo ""
 echo "JSON RESULT:"
