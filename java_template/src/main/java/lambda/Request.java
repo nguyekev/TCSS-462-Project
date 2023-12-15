@@ -11,9 +11,18 @@ public class Request {
     String bucketname;
     String outfilename;
     String imagePath;
+    String url;
 
     public String getName() {
         return name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
     
     public String getNameALLCAPS() {
