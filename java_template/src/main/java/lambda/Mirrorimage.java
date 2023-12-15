@@ -34,7 +34,7 @@ public class Mirrorimage implements RequestHandler<Request, HashMap<String, Obje
         
         //Collect inital data.
         Inspector inspector = new Inspector();
-        //inspector.inspectAll();
+        inspector.inspectAll();
         
         //****************START FUNCTION IMPLEMENTATION*************************
         String bucketname = request.getBucketname();
