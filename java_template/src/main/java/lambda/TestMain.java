@@ -111,7 +111,7 @@ public class TestMain {
      * @param path the file path as a string
      * @return a buffered image
      */
-    private static BufferedImage readFromFile(final String path) {
+    public static BufferedImage readFromFile(final String path) {
         BufferedImage image = null;
         try {
             File input_file = new File(path);
@@ -132,7 +132,7 @@ public class TestMain {
      * @param image the buffered image
      * @param outPath the path of the output
      */
-    private static void writeToFile(final BufferedImage image, final String outPath) {
+    public static void writeToFile(final BufferedImage image, final String outPath) {
         try {
             // Output file path
             File output_file = new File(outPath);

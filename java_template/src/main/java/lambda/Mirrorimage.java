@@ -2,10 +2,11 @@ package lambda;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
@@ -95,26 +96,21 @@ public class Mirrorimage implements RequestHandler<Request, HashMap<String, Obje
      * @param image the buffered image
      * @return mirrored buffered image
      */
-    private BufferedImage mirrorImage(final BufferedImage image) {
-        int width = image.getWidth();
-        int height = image.getHeight();
-
-        BufferedImage mimg = new BufferedImage(width * 2, height, BufferedImage.TYPE_INT_ARGB);
+    private static BufferedImage mirrorImage(final BufferedImage image) {
+        AffineTransform tx = AffineTransform.getScaleInstance(-1.0,1.0); 
+        tx.translate(-image.getWidth(), 0); 
+        AffineTransformOp tr = new AffineTransformOp(tx,null);
         
-
-        for(int y = 0; y < height; y++){
-            for(int lx = 0, rx = width*2 - 1; lx < width; lx++, rx--) {
-
-                
-                int p = image.getRGB(lx, y);
-                mimg.setRGB(lx, y, p);
-                mimg.setRGB(rx, y, p);
-            }
-        }
-
-        // crop just the right half of the image (the mirrored part)
-        return mimg.getSubimage(width, 0, width, height);
+        return tr.filter(image, null);
     }
+
+    // public static void main(String[] args) {
+    //     BufferedImage img = TestMain.readFromFile("C:/Users/zebol/Pictures/Bird.png");
+    //     img = GrayScale.applyGrayScale(img);
+    //     TestMain.writeToFile(img, "C:/Users/zebol/Pictures/BirdG.png");
+    //     img = mirrorImage(img);
+    //     TestMain.writeToFile(img, "C:/Users/zebol/Pictures/BirdM.png");
+    // }
 
     // public static void main(String args[])throws IOException{
     //     //BufferedImage for source image
