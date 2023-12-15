@@ -1,0 +1,6 @@
+{
+    "function": "hello_lambda",
+    "platform": "AWS Lambda",
+    "source": "../java_template",
+    "endpoint": ""
+}
