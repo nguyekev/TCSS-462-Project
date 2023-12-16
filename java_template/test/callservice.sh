@@ -56,9 +56,9 @@ echo ""
 #!/bin/bash
 
 # JSON object to pass to Lambda Function
-jsonurl1={"\"url\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/$img1Name\""}
-jsonurl2={"\"url\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/$img2Name\""}
-jsonurl3={"\"url\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/$img3Name\""}
+jsonurl1={"\"url1\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/$img1Name\"","\"url2\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/$img2Name\"","\"url3\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/$img3Name\""}
+# jsonurl2={"\"url\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/$img2Name\""}
+# jsonurl3={"\"url\"":"\"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/$img3Name\""}
 
 #echo "Invoking Lambda function using API Gateway"
 #time output=`curl -s -H "Content-Type: application/json" -X POST -d $json {API-GATEWAY-REST-URL}`
@@ -76,16 +76,4 @@ time outputurl1=`aws lambda invoke --invocation-type RequestResponse --function-
 echo ""
 echo "JSON RESULT:"
 echo $outputurl1 | jq
-echo ""
-
-time outputurl2=`aws lambda invoke --invocation-type RequestResponse --function-name ImageSql --region us-east-2 --payload $jsonurl2 /dev/stdout | head -n 1 | head -c -2 ; echo`
-echo ""
-echo "JSON RESULT:"
-echo $outputurl2 | jq
-echo ""
-
-time outputurl3=`aws lambda invoke --invocation-type RequestResponse --function-name ImageSql --region us-east-2 --payload $jsonurl3 /dev/stdout | head -n 1 | head -c -2 ; echo`
-echo ""
-echo "JSON RESULT:"
-echo $outputurl3 | jq
 echo ""

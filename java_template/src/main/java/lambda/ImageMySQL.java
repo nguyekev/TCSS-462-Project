@@ -61,14 +61,20 @@ public class ImageMySQL implements RequestHandler<Request, HashMap<String, Objec
             String driver = properties.getProperty("driver");
             context.getLogger().log("Properties init done");
             
-            r.setValue(request.getUrl());
+            r.setValue(request.getUrl1() + ",\n" + request.getUrl2() + ",\n" + request.getUrl3());
             // Manually loading the JDBC Driver is commented out
             // No longer required since JDBC 4
             //Class.forName(driver);
             Connection con = DriverManager.getConnection(url,username,password);
             context.getLogger().log("Connection done");
-            
-            PreparedStatement ps = con.prepareStatement("insert into urltable values('" + request.getUrl() + "');");
+
+            PreparedStatement ps = con.prepareStatement("delete from urltable;");
+            ps.execute();
+            ps = con.prepareStatement("insert into urltable values('" + request.getUrl1() + "');");
+            ps.execute();
+            ps = con.prepareStatement("insert into urltable values('" + request.getUrl2() + "');");
+            ps.execute();
+            ps = con.prepareStatement("insert into urltable values('" + request.getUrl3() + "');");
             ps.execute();
             ps = con.prepareStatement("select * from urltable;");
             
