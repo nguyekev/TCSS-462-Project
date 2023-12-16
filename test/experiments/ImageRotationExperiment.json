@@ -2,19 +2,13 @@
     "callWithCLI": true,
     "callAsync": false,
     "memorySettings": [],
-    "parentPayload": {
-      "name": "Jose"
-    },
+    "parentPayload": {"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "outfilename":"BirdRotate.png"},
     "payloads": [
-        { "imagePath": "path/to/image1.png", "format": "png", "resize": false },
-  	{ "imagePath": "path/to/image3.png", "format": "png", "rotate": 90 },
-  	{ "imagePath": "path/to/image2.png", "format": "png", "resize": false },
-  	{ "imagePath": "path/to/image3.jpg", "format": "png", "rotate": 90 }
-   
+      {"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "outfilename":"BirdRotate.png"}
     ],
 
-    "runs": 50,
-    "threads": 50,
+    "runs": 1,
+    "threads": 1,
     "iterations": 1,
     "sleepTime": 5,
     "randomSeed": 42,
