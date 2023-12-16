@@ -11,7 +11,7 @@ img3Name=ImgGrayMirrorRotate.png
 payload='{"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "imagePath":"/images/Bird.png"}'
 
 echo "Invoking Lambda function using AWS CLI to upload image to S3"
-output=$(aws lambda invoke --invocation-type RequestResponse --function-name Image_uploaderimage --region us-east-2 --payload "$payload" /dev/null)
+time output=`aws lambda invoke --invocation-type RequestResponse --function-name Image_uploaderimage --region us-east-2 --payload "$payload" /dev/stdout | head -n 1 | head -c -2 ; echo`
 
 echo ""
 echo "JSON RESULT:"

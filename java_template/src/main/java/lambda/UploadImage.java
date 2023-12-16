@@ -64,12 +64,14 @@ public class UploadImage implements RequestHandler<Request, HashMap<String, Obje
         } else {
             context.getLogger().log("Image stream is null. Image file not found in the JAR.");
         }
-
+        inspector.addAttribute("message", "bucketname=" + request.getBucketname() + " filename=" + request.getFilename()
+                + " image path=" + request.getImagePath());
+        
         Response response = new Response();
         response.setValue("Bucket:" + bucketname + ", Filename:" + filename + ", ImagePath:" + imagePath);
 
         inspector.consumeResponse(response);
-        context.getLogger().log("Returning response.");
+        inspector.inspectAllDeltas();
         return inspector.finish();
     }
 }
