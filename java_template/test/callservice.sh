@@ -78,14 +78,14 @@ echo "JSON RESULT:"
 echo $outputurl1 | jq
 echo ""
 
-# time outputurl2=`aws lambda invoke --invocation-type RequestResponse --function-name ImageSql --region us-east-2 --payload $json /dev/stdout | head -n 1 | head -c -2 ; echo`
-# echo ""
-# echo "JSON RESULT:"
-# echo $outputurl2 | jq
-# echo ""
+time outputurl2=`aws lambda invoke --invocation-type RequestResponse --function-name ImageSql --region us-east-2 --payload $jsonurl2 /dev/stdout | head -n 1 | head -c -2 ; echo`
+echo ""
+echo "JSON RESULT:"
+echo $outputurl2 | jq
+echo ""
 
-# time outputurl3=`aws lambda invoke --invocation-type RequestResponse --function-name ImageSql --region us-east-2 --payload $json /dev/stdout | head -n 1 | head -c -2 ; echo`
-# echo ""
-# echo "JSON RESULT:"
-# echo $outputurl3 | jq
-# echo ""
+time outputurl3=`aws lambda invoke --invocation-type RequestResponse --function-name ImageSql --region us-east-2 --payload $jsonurl3 /dev/stdout | head -n 1 | head -c -2 ; echo`
+echo ""
+echo "JSON RESULT:"
+echo $outputurl3 | jq
+echo ""
