@@ -1,0 +1,53 @@
+2023-12-15 21:10:21.726175 - Python Partest Version 0.5
+Setting up test: runsperthread=2 threads=1 totalruns=2 payload=[{'bucketname': 'tcss.bucket.462.f23.image.bl' 'filename': 'Bird.png' 'imagePath': '/images/Bird.png'} {'bucketname': 'tcss.bucket.462.f23.image.bl' 'filename': 'Bird.png' 'imagePath': '/images/Bird.png'}]
+
+Raw results of each run:
+1_run_id,2_thread_id,containerID,contextSwitches,cpuCores,cpuIdle,cpuIowait,cpuIrq,cpuKrn,cpuModel,cpuNice,cpuSoftIrq,cpuType,cpuUsr,endTime,frameworkRuntime,freeMemory,functionMemory,functionName,functionRegion,latency,majorPageFaults,newcontainer,pageFaults,payload,roundTripTime,runtime,runtimeOverlap,startTime,totalMemory,uuid,value,vmID,vmcpusteal,vmuptime
+0,0,2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073,18395,unknown,44962,2,0,86,unknown,0,9,unknown - Model unknown,346,1702703419870,156,500604,512,Image_uploaderimage,us-east-2,3830.92,1000,1,97899,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "imagePath": "/images/Bird.png"},4571.92,741,0.0,1702703419129,667540,48849aa9-800b-4c07-a986-216535dee7d5,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; ImagePath:/images/Bird.png,wXjABF,0,1702703192
+1,0,2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073,20105,unknown,45373,2,0,90,unknown,0,10,unknown - Model unknown,360,1702703421484,10,489608,512,Image_uploaderimage,us-east-2,1536.31,1041,0,102209,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "imagePath": "/images/Bird.png"},1547.31,11,0.0,1702703421473,667540,48849aa9-800b-4c07-a986-216535dee7d5,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; ImagePath:/images/Bird.png,wXjABF,0,1702703192
+Successful Runs: 2
+
+Category containerID:
+containerID,uses,avg_contextSwitches,cpuType_list,avg_endTime,avg_frameworkRuntime,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,sum_newcontainer,avg_pageFaults,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,vmID_list,avg_vmcpusteal,avg_vmuptime
+2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073,2,19250.00,['unknown - Model unknown'],1702703420677.00,83.00,495106.00,512.00,2683.62,1020.50,1,100054.00,3059.62,376.00,0.00,1702703420301.00,2.00,667540.00,['wXjABF'],0.00,1702703192.00
+Total number of unique containerIDs: 1
+
+Category cpuType:
+cpuType,uses,containerID_list,avg_contextSwitches,avg_endTime,avg_frameworkRuntime,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,sum_newcontainer,avg_pageFaults,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,vmID_list,avg_vmcpusteal,avg_vmuptime
+unknown - Model unknown,2,['2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073'],19250.00,1702703420677.00,83.00,495106.00,512.00,2683.62,1020.50,1,100054.00,3059.62,376.00,0.00,1702703420301.00,2.00,667540.00,['wXjABF'],0.00,1702703192.00
+Total number of unique cpuTypes: 1
+
+--- Runs of Group cpuType ---
+
+Category cpuType with unknown - Model unknown:
+containerID,contextSwitches,cpuCores,endTime,frameworkRuntime,freeMemory,functionMemory,functionName,functionRegion,latency,majorPageFaults,newcontainer,pageFaults,payload,roundTripTime,runtime,runtimeOverlap,startTime,tenants[vmID],totalMemory,uuid,value,vmID,vmcpusteal,vmuptime,zTenancy[vmID]
+2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073,18395,unknown,1702703419870,156,500604,512,Image_uploaderimage,us-east-2,3830.92,1000,1,97899,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "imagePath": "/images/Bird.png"},4571.92,741,0.0,1702703419129,2,667540,48849aa9-800b-4c07-a986-216535dee7d5,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; ImagePath:/images/Bird.png,wXjABF,0,1702703192,unknown - Model unknown - 2
+2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073,20105,unknown,1702703421484,10,489608,512,Image_uploaderimage,us-east-2,1536.31,1041,0,102209,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "imagePath": "/images/Bird.png"},1547.31,11,0.0,1702703421473,2,667540,48849aa9-800b-4c07-a986-216535dee7d5,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; ImagePath:/images/Bird.png,wXjABF,0,1702703192,unknown - Model unknown - 2
+
+Category newcontainer:
+newcontainer,uses,containerID_list,avg_contextSwitches,cpuType_list,avg_endTime,avg_frameworkRuntime,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,sum_newcontainer,avg_pageFaults,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,vmID_list,avg_vmcpusteal,avg_vmuptime
+0,1,['2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073'],20105.00,['unknown - Model unknown'],1702703421484.00,10.00,489608.00,512.00,1536.31,1041.00,0,102209.00,1547.31,11.00,0.00,1702703421473.00,2.00,667540.00,['wXjABF'],0.00,1702703192.00
+1,1,['2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073'],18395.00,['unknown - Model unknown'],1702703419870.00,156.00,500604.00,512.00,3830.92,1000.00,1,97899.00,4571.92,741.00,0.00,1702703419129.00,2.00,667540.00,['wXjABF'],0.00,1702703192.00
+Total number of unique newcontainers: 2
+
+Category vmID:
+vmID,uses,containerID_list,avg_contextSwitches,cpuType_list,avg_endTime,avg_frameworkRuntime,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,sum_newcontainer,avg_pageFaults,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,avg_vmcpusteal,avg_vmuptime
+wXjABF,2,['2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073'],19250.00,['unknown - Model unknown'],1702703420677.00,83.00,495106.00,512.00,2683.62,1020.50,1,100054.00,3059.62,376.00,0.00,1702703420301.00,2.00,667540.00,0.00,1702703192.00
+Total number of unique vmIDs: 1
+
+Category zAll:
+zAll,uses,containerID_list,avg_contextSwitches,cpuType_list,avg_endTime,avg_frameworkRuntime,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,sum_newcontainer,avg_pageFaults,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,vmID_list,avg_vmcpusteal,avg_vmuptime
+Final Results:,2,['2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073'],19250.00,['unknown - Model unknown'],1702703420677.00,83.00,495106.00,512.00,2683.62,1020.50,1,100054.00,3059.62,376.00,0.00,1702703420301.00,2.00,667540.00,['wXjABF'],0.00,1702703192.00
+Total number of unique zAlls: 1
+
+Category zTenancy[vmID]:
+zTenancy[vmID],uses,containerID_list,avg_contextSwitches,avg_endTime,avg_frameworkRuntime,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,sum_newcontainer,avg_pageFaults,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,vmID_list,avg_vmcpusteal,avg_vmuptime
+unknown - Model unknown - 2,2,['2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073'],19250.00,1702703420677.00,83.00,495106.00,512.00,2683.62,1020.50,1,100054.00,3059.62,376.00,0.00,1702703420301.00,2.00,667540.00,['wXjABF'],0.00,1702703192.00
+Total number of unique zTenancy[vmID]s: 1
+
+--- Runs of Group zTenancy[vmID] ---
+
+Category zTenancy[vmID] with unknown - Model unknown - 2:
+containerID,contextSwitches,cpuCores,endTime,frameworkRuntime,freeMemory,functionMemory,functionName,functionRegion,latency,majorPageFaults,newcontainer,pageFaults,payload,roundTripTime,runtime,runtimeOverlap,startTime,tenants[vmID],totalMemory,uuid,value,vmID,vmcpusteal,vmuptime,zTenancy[vmID]
+2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073,18395,unknown,1702703419870,156,500604,512,Image_uploaderimage,us-east-2,3830.92,1000,1,97899,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "imagePath": "/images/Bird.png"},4571.92,741,0.0,1702703419129,2,667540,48849aa9-800b-4c07-a986-216535dee7d5,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; ImagePath:/images/Bird.png,wXjABF,0,1702703192,unknown - Model unknown - 2
+2023/12/16/[$LATEST]fe5d83a7ed4c4d348a3f221909ffe073,20105,unknown,1702703421484,10,489608,512,Image_uploaderimage,us-east-2,1536.31,1041,0,102209,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "imagePath": "/images/Bird.png"},1547.31,11,0.0,1702703421473,2,667540,48849aa9-800b-4c07-a986-216535dee7d5,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; ImagePath:/images/Bird.png,wXjABF,0,1702703192,unknown - Model unknown - 2

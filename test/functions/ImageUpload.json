@@ -1,0 +1,6 @@
+{
+    "function": "Image_uploaderimage",
+    "platform": "AWS Lambda",
+    "source": "../java_template",
+    "endpoint": ""
+}

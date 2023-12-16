@@ -1,0 +1,49 @@
+2023-12-15 20:15:16.265974 - Python Partest Version 0.5
+Setting up test: runsperthread=1 threads=1 totalruns=1 payload=[{'bucketname': 'tcss.bucket.462.f23.image.bl' 'filename': 'Bird.png' 'outfilename': 'BirdGray.png'}]
+
+Raw results of each run:
+1_run_id,2_thread_id,containerID,contextSwitches,contextSwitchesDelta,cpuCores,cpuIdle,cpuIdleDelta,cpuIowait,cpuIowaitDelta,cpuIrq,cpuIrqDelta,cpuKrn,cpuKrnDelta,cpuModel,cpuNice,cpuNiceDelta,cpuSoftIrq,cpuSoftIrqDelta,cpuType,cpuUsr,cpuUsrDelta,endTime,frameworkRuntime,frameworkRuntimeDeltas,freeMemory,functionMemory,functionName,functionRegion,latency,majorPageFaults,majorPageFaultsDelta,newcontainer,pageFaults,pageFaultsDelta,payload,roundTripTime,runtime,runtimeOverlap,startTime,totalMemory,userRuntime,uuid,value,vmID,vmcpusteal,vmcpustealDelta,vmuptime
+0,0,2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4,18460,13156,2,27521,2472,2,3,0,0,71,40,63,0,0,7,3,Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63,66,260,1702700115909,121,1,515796,512,image_grayscale,us-east-2,3578.24,957,43,1,106565,12334,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "outfilename": "BirdGray.png"},18023.24,14445,0,1702700101464,674032,14323,6ac6091c-92e6-4f17-af0a-e0573f6b1bea,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; Outfile: BirdGray.png,LIUDKj,4,3,1702699963
+Successful Runs: 1
+
+Category containerID:
+containerID,uses,avg_contextSwitches,avg_contextSwitchesDelta,avg_cpuCores,avg_cpuIdleDelta,avg_cpuIowaitDelta,avg_cpuIrqDelta,avg_cpuKrnDelta,avg_cpuNiceDelta,avg_cpuSoftIrqDelta,cpuType_list,avg_cpuUsrDelta,avg_endTime,avg_frameworkRuntime,avg_frameworkRuntimeDeltas,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,avg_majorPageFaultsDelta,sum_newcontainer,avg_pageFaults,avg_pageFaultsDelta,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,avg_userRuntime,vmID_list,avg_vmcpusteal,avg_vmcpustealDelta,avg_vmuptime
+2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4,1,18460.00,13156.00,2.00,2472.00,3.00,0.00,40.00,0.00,3.00,['Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63'],260.00,1702700115909.00,121.00,1.00,515796.00,512.00,3578.24,957.00,43.00,1,106565.00,12334.00,18023.24,14445.00,0.00,1702700101464.00,1.00,674032.00,14323.00,['LIUDKj'],4.00,3.00,1702699963.00
+Total number of unique containerIDs: 1
+
+Category cpuType:
+cpuType,uses,containerID_list,avg_contextSwitches,avg_contextSwitchesDelta,avg_cpuCores,avg_cpuIdleDelta,avg_cpuIowaitDelta,avg_cpuIrqDelta,avg_cpuKrnDelta,avg_cpuNiceDelta,avg_cpuSoftIrqDelta,avg_cpuUsrDelta,avg_endTime,avg_frameworkRuntime,avg_frameworkRuntimeDeltas,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,avg_majorPageFaultsDelta,sum_newcontainer,avg_pageFaults,avg_pageFaultsDelta,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,avg_userRuntime,vmID_list,avg_vmcpusteal,avg_vmcpustealDelta,avg_vmuptime
+Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63,1,['2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4'],18460.00,13156.00,2.00,2472.00,3.00,0.00,40.00,0.00,3.00,260.00,1702700115909.00,121.00,1.00,515796.00,512.00,3578.24,957.00,43.00,1,106565.00,12334.00,18023.24,14445.00,0.00,1702700101464.00,1.00,674032.00,14323.00,['LIUDKj'],4.00,3.00,1702699963.00
+Total number of unique cpuTypes: 1
+
+--- Runs of Group cpuType ---
+
+Category cpuType with Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63:
+containerID,contextSwitches,contextSwitchesDelta,cpuCores,cpuIdleDelta,cpuIowaitDelta,cpuIrqDelta,cpuKrnDelta,cpuNiceDelta,cpuSoftIrqDelta,cpuUsrDelta,endTime,frameworkRuntime,frameworkRuntimeDeltas,freeMemory,functionMemory,functionName,functionRegion,latency,majorPageFaults,majorPageFaultsDelta,newcontainer,pageFaults,pageFaultsDelta,payload,roundTripTime,runtime,runtimeOverlap,startTime,tenants[vmID],totalMemory,userRuntime,uuid,value,vmID,vmcpusteal,vmcpustealDelta,vmuptime,zTenancy[vmID]
+2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4,18460,13156,2,2472,3,0,40,0,3,260,1702700115909,121,1,515796,512,image_grayscale,us-east-2,3578.24,957,43,1,106565,12334,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "outfilename": "BirdGray.png"},18023.24,14445,0,1702700101464,1,674032,14323,6ac6091c-92e6-4f17-af0a-e0573f6b1bea,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; Outfile: BirdGray.png,LIUDKj,4,3,1702699963,Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63 - 1
+
+Category newcontainer:
+newcontainer,uses,containerID_list,avg_contextSwitches,avg_contextSwitchesDelta,avg_cpuCores,avg_cpuIdleDelta,avg_cpuIowaitDelta,avg_cpuIrqDelta,avg_cpuKrnDelta,avg_cpuNiceDelta,avg_cpuSoftIrqDelta,cpuType_list,avg_cpuUsrDelta,avg_endTime,avg_frameworkRuntime,avg_frameworkRuntimeDeltas,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,avg_majorPageFaultsDelta,sum_newcontainer,avg_pageFaults,avg_pageFaultsDelta,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,avg_userRuntime,vmID_list,avg_vmcpusteal,avg_vmcpustealDelta,avg_vmuptime
+1,1,['2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4'],18460.00,13156.00,2.00,2472.00,3.00,0.00,40.00,0.00,3.00,['Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63'],260.00,1702700115909.00,121.00,1.00,515796.00,512.00,3578.24,957.00,43.00,1,106565.00,12334.00,18023.24,14445.00,0.00,1702700101464.00,1.00,674032.00,14323.00,['LIUDKj'],4.00,3.00,1702699963.00
+Total number of unique newcontainers: 1
+
+Category vmID:
+vmID,uses,containerID_list,avg_contextSwitches,avg_contextSwitchesDelta,avg_cpuCores,avg_cpuIdleDelta,avg_cpuIowaitDelta,avg_cpuIrqDelta,avg_cpuKrnDelta,avg_cpuNiceDelta,avg_cpuSoftIrqDelta,cpuType_list,avg_cpuUsrDelta,avg_endTime,avg_frameworkRuntime,avg_frameworkRuntimeDeltas,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,avg_majorPageFaultsDelta,sum_newcontainer,avg_pageFaults,avg_pageFaultsDelta,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,avg_userRuntime,avg_vmcpusteal,avg_vmcpustealDelta,avg_vmuptime
+LIUDKj,1,['2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4'],18460.00,13156.00,2.00,2472.00,3.00,0.00,40.00,0.00,3.00,['Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63'],260.00,1702700115909.00,121.00,1.00,515796.00,512.00,3578.24,957.00,43.00,1,106565.00,12334.00,18023.24,14445.00,0.00,1702700101464.00,1.00,674032.00,14323.00,4.00,3.00,1702699963.00
+Total number of unique vmIDs: 1
+
+Category zAll:
+zAll,uses,containerID_list,avg_contextSwitches,avg_contextSwitchesDelta,avg_cpuCores,avg_cpuIdleDelta,avg_cpuIowaitDelta,avg_cpuIrqDelta,avg_cpuKrnDelta,avg_cpuNiceDelta,avg_cpuSoftIrqDelta,cpuType_list,avg_cpuUsrDelta,avg_endTime,avg_frameworkRuntime,avg_frameworkRuntimeDeltas,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,avg_majorPageFaultsDelta,sum_newcontainer,avg_pageFaults,avg_pageFaultsDelta,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,avg_userRuntime,vmID_list,avg_vmcpusteal,avg_vmcpustealDelta,avg_vmuptime
+Final Results:,1,['2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4'],18460.00,13156.00,2.00,2472.00,3.00,0.00,40.00,0.00,3.00,['Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63'],260.00,1702700115909.00,121.00,1.00,515796.00,512.00,3578.24,957.00,43.00,1,106565.00,12334.00,18023.24,14445.00,0.00,1702700101464.00,1.00,674032.00,14323.00,['LIUDKj'],4.00,3.00,1702699963.00
+Total number of unique zAlls: 1
+
+Category zTenancy[vmID]:
+zTenancy[vmID],uses,containerID_list,avg_contextSwitches,avg_contextSwitchesDelta,avg_cpuCores,avg_cpuIdleDelta,avg_cpuIowaitDelta,avg_cpuIrqDelta,avg_cpuKrnDelta,avg_cpuNiceDelta,avg_cpuSoftIrqDelta,avg_cpuUsrDelta,avg_endTime,avg_frameworkRuntime,avg_frameworkRuntimeDeltas,avg_freeMemory,avg_functionMemory,avg_latency,avg_majorPageFaults,avg_majorPageFaultsDelta,sum_newcontainer,avg_pageFaults,avg_pageFaultsDelta,avg_roundTripTime,avg_runtime,avg_runtimeOverlap,avg_startTime,avg_tenants[vmID],avg_totalMemory,avg_userRuntime,vmID_list,avg_vmcpusteal,avg_vmcpustealDelta,avg_vmuptime
+Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63 - 1,1,['2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4'],18460.00,13156.00,2.00,2472.00,3.00,0.00,40.00,0.00,3.00,260.00,1702700115909.00,121.00,1.00,515796.00,512.00,3578.24,957.00,43.00,1,106565.00,12334.00,18023.24,14445.00,0.00,1702700101464.00,1.00,674032.00,14323.00,['LIUDKj'],4.00,3.00,1702699963.00
+Total number of unique zTenancy[vmID]s: 1
+
+--- Runs of Group zTenancy[vmID] ---
+
+Category zTenancy[vmID] with Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63 - 1:
+containerID,contextSwitches,contextSwitchesDelta,cpuCores,cpuIdleDelta,cpuIowaitDelta,cpuIrqDelta,cpuKrnDelta,cpuNiceDelta,cpuSoftIrqDelta,cpuUsrDelta,endTime,frameworkRuntime,frameworkRuntimeDeltas,freeMemory,functionMemory,functionName,functionRegion,latency,majorPageFaults,majorPageFaultsDelta,newcontainer,pageFaults,pageFaultsDelta,payload,roundTripTime,runtime,runtimeOverlap,startTime,tenants[vmID],totalMemory,userRuntime,uuid,value,vmID,vmcpusteal,vmcpustealDelta,vmuptime,zTenancy[vmID]
+2023/12/16/[$LATEST]5480b8646cbf4d7bbd3b694869e600f4,18460,13156,2,2472,3,0,40,0,3,260,1702700115909,121,1,515796,512,image_grayscale,us-east-2,3578.24,957,43,1,106565,12334,{"bucketname": "tcss.bucket.462.f23.image.bl"; "filename": "Bird.png"; "outfilename": "BirdGray.png"},18023.24,14445,0,1702700101464,1,674032,14323,6ac6091c-92e6-4f17-af0a-e0573f6b1bea,Bucket:tcss.bucket.462.f23.image.bl; Filename:Bird.png; Outfile: BirdGray.png,LIUDKj,4,3,1702699963,Intel(R) Xeon(R) Processor @ 3.00GHz - Model 63 - 1

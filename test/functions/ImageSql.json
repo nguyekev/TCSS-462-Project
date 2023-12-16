@@ -1,0 +1,6 @@
+{
+    "function": "ImageSql",
+    "platform": "AWS Lambda",
+    "source": "../java_template",
+    "endpoint": ""
+}

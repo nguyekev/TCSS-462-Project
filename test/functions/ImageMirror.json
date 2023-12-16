@@ -1,0 +1,6 @@
+{
+    "function": "image_mirrorimage",
+    "platform": "AWS Lambda",
+    "source": "../java_template",
+    "endpoint": ""
+}

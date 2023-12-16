@@ -2,9 +2,13 @@
     "callWithCLI": true,
     "callAsync": false,
     "memorySettings": [],
-    "parentPayload": {"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "outfilename":"BirdRotate.png"},
+    "parentPayload": {"url1":"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/ImgGrayMirrorRotate.png",
+    "url2":"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/ImgGrayMirrorRotate.png", 
+    "url3":"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/ImgGrayMirrorRotate.png"},
     "payloads": [
-      {"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "outfilename":"BirdRotate.png"}
+      {"url1":"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/ImgGrayMirrorRotate.png",
+      "url2":"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/ImgGrayMirrorRotate.png", 
+      "url3":"https://s3.us-east-2.amazonaws.com/tcss.bucket.462.f23.image.bl/ImgGrayMirrorRotate.png"}
     ],
 
     "runs": 2,

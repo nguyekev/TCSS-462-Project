@@ -1,0 +1,6 @@
+{
+    "function": "image_grayscale",
+    "platform": "AWS Lambda",
+    "source": "../java_template",
+    "endpoint": ""
+}

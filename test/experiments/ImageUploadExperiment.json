@@ -2,9 +2,9 @@
     "callWithCLI": true,
     "callAsync": false,
     "memorySettings": [],
-    "parentPayload": {"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "outfilename":"BirdRotate.png"},
+    "parentPayload": {"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "imagePath":"/images/Bird.png"},
     "payloads": [
-      {"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "outfilename":"BirdRotate.png"}
+      {"bucketname":"tcss.bucket.462.f23.image.bl","filename":"Bird.png", "imagePath":"/images/Bird.png"}
     ],
 
     "runs": 2,
